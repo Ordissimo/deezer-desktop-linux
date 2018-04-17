@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <title>Deezer</title>
+  <link rel="stylesheet" href="../css/browser.css">
+  <script src="../js/browser.js"></script>
+</head>
+<body>
+  <div id="controls">
+    <center id="apptitle"></center>
+    <div id="close">
+      <img src="../images/close.png"/>Fermer
+    </div>
+    <div id="loading-spinner">
+      <img src="../images/spinner.gif"/>
+    </div>
+    <div id="home">
+      <img src="../images/home.png"/>D&eacute;part
+    </div>
+  </div>
+
+  <webview id="webview" src="https://www.deezer.com" nodeintegration></webview>
+
+  <!-- TODO: Not tested -->
+  <div id="sad-webview">
+    <div id="sad-webview-icon">&#9762;</div>
+    <h2 id="crashed-label">Oops!</h2>
+    <h2 id="killed-label">Ooops!</h2>
+
+    <p>Une erreur a eu lieu lors de l'affichage de cette page.
+    Pour continuer, recharger cette page, ou aller sur une autre page.</p>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+body {
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+
+/**
+ * Main controls
+ */
+
+#controls {
+    height: 40px;
+    background: lightgrey;
+    padding: 0px;
+    margin: 0px;
+}
+
+#controls #apptitle {
+    font-size: 14pt;
+    font-weight: bold;
+    color: black;
+    padding-top: 9px;
+}
+
+#controls #close {
+    top: 0px;
+    left: 0px;
+    width: 120px;
+    height: 40px;
+    position: absolute;
+    cursor: pointer;
+    font-size: 12pt;
+    font-weight: bold;
+    color: white;
+    line-height: 38px;
+    text-align: left;
+    padding-left: 45px;
+}
+
+#controls #close img {
+    width:32px;
+    height: 32px;
+    padding: 4px;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+}
+
+#controls #home {
+    position: absolute;
+    width: 120px;
+    height: 40px;
+    right: 0px;
+    top: 0px;
+    cursor: pointer;
+    font-size: 12pt;
+    font-weight: bold;
+    color: white;
+    line-height: 38px;
+    text-align: right;
+    padding-right: 45px;
+}
+
+#controls #home img {
+    width:32px;
+    height: 32px;
+    padding: 4px;
+    position: absolute;
+    right: 0px;
+}
+
+
+/**
+ * Loading spinner
+ */
+body #controls #loading-spinner {
+  display: none;
+  text-align: center;
+}
+
+body.loading #controls #loading-spinner {
+  display: block;
+}
+
+body #controls #loading-spinner img {
+  width: 22px;
+  height: 22px;
+
+  margin: auto;
+}
+
+
+/**
+ * Webview
+ */
+
+#webview {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+
+/**
+ * Sad webview
+ * TODO: Not tested
+ */
+
+#sad-webview {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* Due to http://crbug.com/156219 we can't use display: none */
+#sad-webview,
+.exited webview {
+  visibility: hidden;
+  visibility: hidden;
+}
+
+.exited #sad-webview {
+  visibility: visible;
+  background: #343f51;
+  text-align: center;
+  color: #fff;
+}
+
+#sad-webview h2 {
+  font-size: 14px;
+}
+
+#sad-webview p {
+  font-size: 11px;
+}
+
+#sad-webview-icon {
+  font-size: 96px;
+  margin-bottom: 10px;
+}
+
+/* 
+ * Variant of the crashed page when the process is intentionally killed 
+ * (in that case we use a different background color and label). 
+ */
+.exited #sad-webview #killed-label {
+  display: none;
+}
+
+.killed #sad-webview {
+  background: #393058;
+}
+
+.killed #sad-webview #killed-label {
+  display: block;
+}
+
+.killed #sad-webview #crashed-label {
+  display: none;
+}
