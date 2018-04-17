@@ -8,10 +8,10 @@
     "mpris-service": "^1.1.1"
   },
   "scripts": {
-    "build": "electron-packager ./app/ deezer-desktop-linux --platform=linux --arch=x64 --overwrite",
+    "build": "electron-packager ./deezer/ deezer-desktop-linux --platform=linux --arch=x64 --overwrite",
     "dist": "build",
-    "pepper": "rm -rf ./app/plugins && mkdir ./app/plugins && ./extract-linux-pepperflash.sh && mv /usr/lib/adobe-flashplugin/libpepflashplayer.so ./app/plugins/ && mv /usr/lib/adobe-flashplugin/manifest.json ./app/plugins/",
-    "start": "electron app/main.js",
+    "pepper": "rm -rf ./deezer/plugins && mkdir ./deezer/plugins && ./extract-linux-pepperflash.sh && mv /usr/lib/adobe-flashplugin/libpepflashplayer.so ./deezer/plugins/ && mv /usr/lib/adobe-flashplugin/manifest.json ./deezer/plugins/",
+    "start": "electron deezer/main.js",
     "deb64": "electron-installer-debian --src dist/linux-unpacked/ --dest dist/installers/ --arch amd64"
   },
   "build": {
