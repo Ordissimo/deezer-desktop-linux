@@ -192,6 +192,7 @@ const Player = function(mainWindow, configPath) {
 };
 
 Player.prototype.update = function(mainWindow) {
+    try {
     mainWindow.webContents.executeJavaScript(`
         require('electron').ipcRenderer.send("context", {
             currentSong: dzPlayer.getCurrentSong(),
@@ -207,6 +208,7 @@ Player.prototype.update = function(mainWindow) {
             volume: dzPlayer.volume,
         });
     `);
+    } catch (error) {}
 }
 
 module.exports = Player;

@@ -43,8 +43,13 @@ function create() {
 
 	  // Disable the default menu
 	  mainWindow.setMenu(null); 
-  
-    mainWindow.loadURL('https://www.deezer.com');
+           mainWindow.setMenu(null);
+
+    mainWindow.loadURL(url.format({
+       pathname: path.join(__dirname, 'assets/pages/browser.html'),
+       protocol: 'file:',
+       slashes: true
+    }))
 
     mainWindow.on('closed', function() {
         mainWindow.webContents.executeJavaScript('dzPlayer.control.pause();'); 
