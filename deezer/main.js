@@ -6,6 +6,7 @@ const electron = require('electron'),
     path = require("path"),
     Player = require("./player.js"),
     proc = require("process"),
+    url = require("url"),
     configPath = proc.env.HOME + "/.config/Deezer-desktop-linux";
 
 let mainWindow;
