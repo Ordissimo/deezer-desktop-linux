@@ -40,7 +40,10 @@ function create() {
             'plugins': true
         }
     });
-   
+
+	  // Disable the default menu
+	  mainWindow.setMenu(null); 
+  
     mainWindow.loadURL('https://www.deezer.com');
 
     mainWindow.on('closed', function() {
