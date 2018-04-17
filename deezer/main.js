@@ -21,6 +21,8 @@ app.commandLine.appendSwitch('ppapi-flash-path', "/opt/google/chrome-unstable/Pe
 // app.commandLine.appendSwitch('ppapi-flash-path', path.resolve(__dirname, 'plugins/libpepflashplayer.so'));
 // app.commandLine.appendSwitch('ppapi-flash-version', JSON.parse(require("fs").readFileSync(path.resolve(__dirname, "plugins/manifest.json")).toString()).version);
 
+app.disableHardwareAcceleration();
+
 app.on('ready', function() {
     create();
 
@@ -38,11 +40,11 @@ function create() {
             'plugins': true
         }
     });
-
+   
     mainWindow.loadURL('https://www.deezer.com');
-    mainWindow.maximize();
 
     mainWindow.on('closed', function() {
+        mainWindow.webContents.executeJavaScript('dzPlayer.control.pause();'); 
         mainWindow = null;
     });
 };
