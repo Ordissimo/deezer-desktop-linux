@@ -17,7 +17,7 @@ try {
     fs.mkdirSync(configPath, 755);
 }
 
-app.commandLine.appendSwitch('ppapi-flash-path', "/opt/google/chrome-unstable/PepperFlash/libpepflashplayer.so");
+app.commandLine.appendSwitch('ppapi-flash-path', "/usr/lib/adobe-flashplugin/libpepflashplayer.so");
 
 // app.commandLine.appendSwitch('ppapi-flash-path', path.resolve(__dirname, 'plugins/libpepflashplayer.so'));
 // app.commandLine.appendSwitch('ppapi-flash-version', JSON.parse(require("fs").readFileSync(path.resolve(__dirname, "plugins/manifest.json")).toString()).version);
